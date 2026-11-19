@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import type { Contract, Data, Hitter, Pitcher, Window } from './types'
-import { f, heat, percentile } from './format'
+import { f, heat, percentile, type Theme } from './format'
 import { Leaderboard, type Column } from './components/Leaderboard'
 import { Spark } from './components/Spark'
 
@@ -12,6 +12,50 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'pitchers', label: 'Pitchers' },
   { id: 'contracts', label: 'Contracts' },
 ]
+
+const ThemeCtx = createContext<Theme>('light')
+
+const store = {
+  get: (): Theme | null => {
+    try {
+      const v = localStorage.getItem('theme')
+      return v === 'dark' || v === 'light' ? v : null
+    } catch {
+      return null
+    }
+  },
+  set: (v: Theme) => {
+    try {
+      localStorage.setItem('theme', v)
+    } catch {
+      /* storage unavailable: theme just won't persist */
+    }
+  },
+}
+
+/** Follows the system setting until the person picks one, then remembers it. */
+function useTheme(): [Theme, () => void] {
+  const mq = typeof matchMedia === 'function' ? matchMedia('(prefers-color-scheme: dark)') : null
+  const [chosen, setChosen] = useState<Theme | null>(store.get)
+  const [system, setSystem] = useState<Theme>(mq?.matches ? 'dark' : 'light')
+  useEffect(() => {
+    if (!mq) return
+    const on = (e: MediaQueryListEvent) => setSystem(e.matches ? 'dark' : 'light')
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [mq])
+  const theme = chosen ?? system
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#163a2c' : '#1e4d3a')
+  }, [theme])
+  const toggle = () => {
+    const next: Theme = theme === 'dark' ? 'light' : 'dark'
+    store.set(next)
+    setChosen(next)
+  }
+  return [theme, toggle]
+}
 
 function useTab(): [Tab, (t: Tab) => void] {
   const read = () => {
@@ -31,6 +75,7 @@ export default function App() {
   const [data, setData] = useState<Data | null>(null)
   const [error, setError] = useState('')
   const [tab, setTab] = useTab()
+  const [theme, toggleTheme] = useTheme()
   const [win, setWin] = useState<Window>('last30')
   const [league, setLeague] = useState<League>('MLB')
   const [team, setTeam] = useState('')
@@ -53,9 +98,18 @@ export default function App() {
   const filters = { league: LEAGUE_ID[league], team: team ? +team : null, query: query.trim().toLowerCase() }
 
   return (
+    <ThemeCtx.Provider value={theme}>
     <div className="shell">
       <header className="masthead">
         <div className="masthead-inner">
+          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {theme === 'dark' ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5" /><g stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" /></g></svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z" /></svg>
+            )}
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
           <a className="wordmark" href="#hitters" aria-label="That's ball, baby! home">
             <span className="wm-1">That's ball,</span>
             <span className="wm-2">baby!</span>
@@ -114,6 +168,7 @@ export default function App() {
         </p>
       </footer>
     </div>
+    </ThemeCtx.Provider>
   )
 }
 
@@ -154,7 +209,7 @@ function Player({ name, team, extra, data }: { name: string; team: number | null
 }
 
 function Heat({ value, p, children }: { value: string; p: number; children?: string }) {
-  const c = heat(p)
+  const c = heat(p, useContext(ThemeCtx) === 'dark')
   return (
     <span className="heat" style={{ background: c.bg, color: c.fg }} title={`${Math.round(p * 100)}th percentile among qualified players`}>
       {children ?? value}

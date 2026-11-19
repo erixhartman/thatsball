@@ -7,6 +7,13 @@
     <meta name="theme-color" content="#1e4d3a" />
     <meta name="description" content="MLB leaderboards refreshed daily: top 50 hitters by wRC+, top 50 pitchers by FIP, and contract value." />
     <title>That's ball, baby!</title>
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,12 +1,14 @@
 // Savant-style diverging scale: blue (poor) → neutral grey → red (great).
 const BLUE = [47, 95, 174]
-const GREY = [232, 233, 231]
+const GREY_LIGHT = [232, 233, 231]
+const GREY_DARK = [62, 69, 66]
 const RED = [210, 45, 73]
 
 const mix = (a: number[], b: number[], t: number) => a.map((v, i) => Math.round(v + (b[i] - v) * t))
 
 /** p is a percentile 0–1 where 1 is best. */
-export function heat(p: number) {
+export function heat(p: number, dark = false) {
+  const GREY = dark ? GREY_DARK : GREY_LIGHT
   const c = p < 0.5 ? mix(BLUE, GREY, p / 0.5) : mix(GREY, RED, (p - 0.5) / 0.5)
   const [r, g, b] = c.map((v) => {
     const s = v / 255
@@ -15,6 +17,8 @@ export function heat(p: number) {
   const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
   return { bg: `rgb(${c.join(',')})`, fg: lum > 0.32 ? '#1b1f1d' : '#ffffff' }
 }
+
+export type Theme = 'light' | 'dark'
 
 /** Percentile rank of value within a pool. higherIsBetter flips for stats like FIP. */
 export function percentile(pool: number[], value: number, higherIsBetter = true) {
