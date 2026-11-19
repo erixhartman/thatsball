@@ -1,5 +1,7 @@
 # That's ball, baby!
 
+**Live:** [thatsball.vercel.app](https://thatsball.vercel.app)
+
 MLB leaderboards, refreshed every morning: the top 50 hitters by wRC+, the top 50 pitchers by FIP, and how much surplus value teams are getting from big contracts.
 
 A from-scratch rebuild of the original thatsball.baby, which I made with Glenjamin.
