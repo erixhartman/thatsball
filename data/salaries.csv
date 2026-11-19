@@ -1,24 +1,84 @@
-name,aav_usd,years,through,note
-Shohei Ohtani,70000000,10,2033,"10y/$700M; heavily deferred (luxury-tax AAV ~$46M)"
-Juan Soto,51000000,15,2039,15y/$765M
-Zack Wheeler,42000000,3,2027,3y/$126M extension
-Aaron Judge,40000000,9,2031,9y/$360M
-Blake Snell,36400000,5,2029,5y/$182M
-Gerrit Cole,36000000,9,2028,9y/$324M
-Vladimir Guerrero Jr.,35714286,14,2039,14y/$500M extension
-Mike Trout,35541667,12,2030,12y/$426.5M
-Corbin Burnes,35000000,6,2030,6y/$210M
-Francisco Lindor,34100000,10,2031,10y/$341M
-Corey Seager,32500000,10,2031,10y/$325M
-Manny Machado,31818182,11,2033,11y/$350M
-Rafael Devers,31350000,10,2033,10y/$313.5M
-Mookie Betts,30416667,12,2032,12y/$365M
-Max Fried,27250000,8,2032,8y/$218M
-Yoshinobu Yamamoto,27083333,12,2035,12y/$325M
-Bobby Witt Jr.,26254545,11,2034,11y/$288.8M
-Bryce Harper,25384615,13,2031,13y/$330M
-Fernando Tatis Jr.,24285714,14,2034,14y/$340M
-Matt Olson,21000000,8,2029,8y/$168M
-José Ramírez,20142857,7,2029,7y/$141M
-Julio Rodríguez,17441667,12,2034,12y/$209.3M base
-Ronald Acuña Jr.,12500000,8,2026,8y/$100M
+name,aav_usd,years,through,note,source
+Shohei Ohtani,70000000,10,2033,"10y/$700M; heavily deferred (luxury-tax AAV ~$46M)",confirmed 2026-11-19 (The Analyst / MLBTR)
+Kyle Tucker,60000000,4,2029,4y/$240M with opt-outs,confirmed 2026-11-19 (AP via theScore; ESPN)
+Juan Soto,51000000,15,2039,15y/$765M,confirmed 2026-11-19 (MLB.com)
+Bo Bichette,42000000,3,2028,3y/$126M,confirmed 2026-11-19 (NBC Sports; CBS)
+Zack Wheeler,42000000,3,2027,3y/$126M extension,memory - verify
+Aaron Judge,40000000,9,2031,9y/$360M,confirmed 2026-11-19 (The Analyst)
+Framber Valdez,38333333,3,2028,3y/$115M; opt-out after 2027; $20M bonus deferred,confirmed 2026-11-19 (MLB.com; AP)
+Jacob deGrom,37000000,5,2027,5y/$185M,memory - verify
+Blake Snell,36400000,5,2029,5y/$182M,memory - verify
+Gerrit Cole,36000000,9,2028,9y/$324M,confirmed 2026-11-19 (MLB.com)
+Vladimir Guerrero Jr.,35714286,14,2039,14y/$500M extension,confirmed 2026-11-19 (The Analyst)
+Mike Trout,35541667,12,2030,12y/$426.5M,confirmed 2026-11-19 (The Analyst)
+Alex Bregman,35000000,5,2030,5y/$175M,confirmed 2026-11-19 (ESPN; CBS)
+Corbin Burnes,35000000,6,2030,6y/$210M,confirmed 2026-11-19 (AP via theScore)
+Francisco Lindor,34100000,10,2031,10y/$341M,confirmed 2026-11-19 (The Analyst)
+Carlos Correa,33333333,6,2028,6y/$200M,memory - verify
+Corey Seager,32500000,10,2031,10y/$325M,confirmed 2026-11-19 (The Analyst)
+Nolan Arenado,32500000,8,2027,8y/$260M,memory - verify
+Cody Bellinger,32500000,5,2030,5y/$162.5M with opt-outs,confirmed 2026-11-19 (CBS)
+Tarik Skubal,32000000,1,2026,1-year deal after winning arbitration,confirmed 2026-11-19 (theScore; MLBTR)
+Manny Machado,31818182,11,2033,11y/$350M,confirmed 2026-11-19 (The Analyst)
+Rafael Devers,31350000,10,2033,10y/$313.5M,memory - verify
+Pete Alonso,31000000,5,2030,5y/$155M,confirmed 2026-11-19 (Flashscore; ESPN)
+Mookie Betts,30416667,12,2032,12y/$365M,confirmed 2026-11-19 (The Analyst)
+Dylan Cease,30000000,7,2032,7y/$210M,confirmed 2026-11-19 (MLBTR; NBC Sports)
+Kyle Schwarber,30000000,5,2030,5y/$150M,confirmed 2026-11-19 (CBS; ESPN)
+Garrett Crochet,28333333,6,2031,6y/$170M extension,confirmed 2026-11-19 (Boston Sports Journal)
+Trea Turner,27272727,11,2033,11y/$300M,memory - verify
+Max Fried,27250000,8,2032,8y/$218M,memory - verify
+Yoshinobu Yamamoto,27083333,12,2035,12y/$325M,memory - verify
+Carlos Rodón,27000000,6,2028,6y/$162M,memory - verify
+Freddie Freeman,27000000,6,2027,6y/$162M,memory - verify
+Bobby Witt Jr.,26254545,11,2034,11y/$288.8M,memory - verify
+Ranger Suárez,26000000,5,2030,5y/$130M; no deferrals,confirmed 2026-11-19 (MLB.com; AP)
+Willy Adames,26000000,7,2031,7y/$182M,memory - verify
+Xander Bogaerts,25454545,11,2033,11y/$280M,memory - verify
+Bryce Harper,25384615,13,2031,13y/$330M,confirmed 2026-11-19 (The Analyst)
+Dansby Swanson,25285714,7,2029,7y/$177M,memory - verify
+Matt Chapman,25166667,6,2030,6y/$151M,memory - verify
+Jose Altuve,25000000,5,2029,5y/$125M extension,memory - verify
+Marcus Semien,25000000,7,2027,7y/$175M,memory - verify
+Giancarlo Stanton,25000000,13,2027,13y/$325M,memory - verify
+George Springer,25000000,6,2026,6y/$150M,memory - verify
+Sonny Gray,25000000,3,2026,3y/$75M,memory - verify
+Aaron Nola,24571429,7,2030,7y/$172M,memory - verify
+Fernando Tatis Jr.,24285714,14,2034,14y/$340M,confirmed 2026-11-19 (The Analyst)
+Christian Yelich,23888889,9,2028,9y/$215M,memory - verify
+Teoscar Hernández,22000000,3,2027,3y/$66M,memory - verify
+Kevin Gausman,22000000,5,2026,5y/$110M,memory - verify
+Austin Riley,21200000,10,2032,10y/$212M,memory - verify
+Matt Olson,21000000,8,2029,8y/$168M,memory - verify
+José Ramírez,20142857,7,2029,7y/$141M,memory - verify
+Merrill Kelly,20000000,2,2027,2y/$40M,confirmed 2026-11-19 (Flashscore; ESPN)
+Salvador Perez,20500000,4,2026,4y/$82M,memory - verify
+Yordan Alvarez,19166667,6,2028,6y/$115M,memory - verify
+Chris Sale,19000000,2,2026,2y/$38M extension,memory - verify
+José Berríos,18714286,7,2028,7y/$131M,memory - verify
+Logan Webb,18000000,5,2028,5y/$90M,memory - verify
+Yu Darvish,18000000,6,2028,6y/$108M,memory - verify
+Cal Raleigh,17500000,6,2030,6y/$105M,memory - verify
+Julio Rodríguez,17441667,12,2034,12y/$209.3M base,memory - verify
+Munetaka Murakami,17000000,2,2027,2y/$34M,confirmed 2026-11-19 (CBS)
+Seiya Suzuki,17000000,5,2026,5y/$85M,memory - verify
+Roman Anthony,16250000,8,2032,8y/$130M extension,memory - verify
+Robert Suarez,15000000,3,2028,3y/$45M,confirmed 2026-11-19 (CBS)
+Kazuma Okamoto,15000000,4,2029,4y/$60M,confirmed 2026-11-19 (CBS)
+Jackson Merrill,15000000,9,2033,9y/$135M extension,memory - verify
+Byron Buxton,14285714,7,2028,7y/$100M,memory - verify
+Ryan Helsley,14000000,2,2027,2y/$28M,confirmed 2026-11-19 (Flashscore)
+Corbin Carroll,13875000,8,2030,8y/$111M,memory - verify
+Ronald Acuña Jr.,12500000,8,2026,8y/$100M,memory - verify
+Spencer Strider,12500000,6,2028,6y/$75M,memory - verify
+Luke Weaver,11000000,2,2027,2y/$22M,confirmed 2026-11-19 (CBS)
+Jackson Chourio,10250000,8,2031,8y/$82M extension,memory - verify
+Michael Harris II,9000000,8,2030,8y/$72M,memory - verify
+Hunter Greene,8833333,6,2029,6y/$53M,memory - verify
+Kristian Campbell,7500000,8,2032,8y/$60M extension,memory - verify
+Paul Skenes,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
+James Wood,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
+Ben Rice,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
+Jacob Misiorowski,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
+Cam Schlittler,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
+Nick Kurtz,780000,,,"Pre-arbitration; about league minimum",memory - verify (2026 minimum $780K)
