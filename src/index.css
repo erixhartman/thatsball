@@ -214,3 +214,8 @@ a { color: var(--ink); text-underline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* Skip link: first thing a keyboard user reaches */
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 50; background: var(--surface); color: var(--ink); padding: 8px 12px; font-weight: 600; }
+.skip:focus { left: 8px; }
+main:focus { outline: none; }

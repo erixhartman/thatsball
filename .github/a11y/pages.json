@@ -1,0 +1,1 @@
+{"serve":"npx vite preview --port 4173 --strictPort","url":"http://localhost:4173/","pages":["","#pitchers","#contracts"],"schemes":["light","dark"]}

@@ -15,7 +15,10 @@ export function heat(p: number, dark = false) {
     return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4
   })
   const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
-  return { bg: `rgb(${c.join(',')})`, fg: lum > 0.32 ? '#1b1f1d' : '#ffffff' }
+  // Pick whichever text colour contrasts more with this cell, so every cell clears WCAG AA.
+  const onWhite = 1.05 / (lum + 0.05)
+  const onInk = (lum + 0.05) / (0.0137 + 0.05) // #1b1f1d
+  return { bg: `rgb(${c.join(',')})`, fg: onInk >= onWhite ? '#1b1f1d' : '#ffffff' }
 }
 
 export type Theme = 'light' | 'dark'

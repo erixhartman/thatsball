@@ -99,6 +99,7 @@ export default function App() {
 
   return (
     <ThemeCtx.Provider value={theme}>
+      <a className="skip" href="#main" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus() }}>Skip to content</a>
     <div className="shell">
       <header className="masthead">
         <div className="masthead-inner">
@@ -125,7 +126,7 @@ export default function App() {
         <StatusLine data={data} />
       </header>
 
-      <main className="content">
+      <main className="content" id="main" tabIndex={-1}>
         {tab !== 'method' && (
           <div className="controls" role="group" aria-label="Filters">
             {tab !== 'contracts' && (
