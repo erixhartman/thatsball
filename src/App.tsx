@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import type { Contract, Data, Hitter, Pitcher, Window } from './types'
 import { f, heat, percentile, type Theme } from './format'
 import { Leaderboard, type Column } from './components/Leaderboard'
@@ -169,6 +170,7 @@ export default function App() {
         </p>
       </footer>
     </div>
+    <Analytics />
     </ThemeCtx.Provider>
   )
 }
